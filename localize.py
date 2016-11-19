@@ -13,7 +13,7 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', type=str, default=sys.stdin)
     parser.add_argument('--cols', type=int, nargs=2, default=(0, 1))
-    parser.add_argument('--tzcol', type=int, default=2)
+    parser.add_argument('--tscol', type=int, default=2)
 
     return parser.parse_args()
 
@@ -23,7 +23,7 @@ def main(args):
     reader = csv.reader(args.input)
 
     for row in reader:
-        naive_datetime = datetime.datetime.utcfromtimestamp(int(row[args.tzcol]) / 1000)
+        naive_datetime = datetime.datetime.utcfromtimestamp(int(row[args.tscol]) / 1000)
         tz = tf.timezone_at(lat=float(row[args.cols[0]]),
                             lng=float(row[args.cols[1]]))
 
