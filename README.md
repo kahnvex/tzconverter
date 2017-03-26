@@ -1,7 +1,7 @@
 # tzconverter
 
 This is a simple program which takes a csv file or pipe
-on stdin containing Lat, Long, and a UTC ecoch millisecond
+on stdin containing Lat, Long, and a UTC epoch millisecond
 timestamp and appends a localized epoch millisecond timestamp.
 
 The program writes the output back to stdout, where you can
